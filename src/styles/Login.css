@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.container-content-login {
+    display: flex;
+    justify-content: center;
+   align-items: center;
+}
+
+.container-login {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 130px 0px 40px 0px;
+}
+
+.content-login {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.content-title-login {
+    font-family: "Roboto", serif;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+.input-login {
+    background-color: white;
+    border: 2px solid #E5E5E5;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+    width: 50%;
+}
+
+.password{
+    text-align: center;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    margin-top: 18px;
+    cursor: pointer;
+}
+
+.button-login {
+    background-color: #009078;
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    margin: 5px 0px;
+    width: 25%;
+}
+
+.question, .question-bis{
+    text-align: center;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    margin-top: 18px;
+    margin-bottom: 30px;
+}
+
+.question-bis{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.success-message {
+    color: green;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 0;
+}
+
+.error-message {
+    color: red;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* STYLES POUR MOBILE */
+@media screen and (max-width: 480px) {
+    .container-login {
+        width: 90%;
+        margin: 120px 0px 40px 0px;
+    }
+    .input-login {
+        width: 70%;
+    }
+    .button-login {
+        width: 40%;
+    }
+}

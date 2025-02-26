@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ebebeb;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banniere{
+    width: 100%;
+    margin-top: 90px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banniere-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #009078;
+    width: 100%;
+    height: 100px;
+}
+
+.title {
+    font-family: "Aldrich", serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container-content{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.content-title {
+    font-family: "Roboto", serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    size: 18px;
+   
+}
+
+.content-text{
+    font-size: 16px;
+    margin: 0px 50px 30px 50px;
+}
+
+.content-2{
+    margin-top: 20px;
+    width: 100%;
+    font-family: "Roboto", serif;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+
+.content-title-2 {
+    font-family: "Roboto", serif;
+    font-weight: bold;
+    color: black;
+    text-align: start;
+    size: 18px;
+    margin-top: 50px;
+}
+
+.content-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.content-text-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px 0 40px;
+    background-color: #399d40;
+    height: 160px;
+    width: 35%;
+    border-radius: 0px 20px 00px 20px;
+    text-align: center;
+    color: white;
+    font-family: "Roboto", serif;
+    font-weight: lighter;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour l'échelle et l'ombre */
+}
+
+.content-text-1:hover,.content-text-2:hover,.content-text-3:hover{ 
+    transform: scale(1.1); /* Augmente la taille de la div, donnant l'impression qu'elle avance */
+    /*box-shadow: 0 2px 5px white; /* Ombre plus marquée pour renforcer l'effet */
+}
+
+.content-text-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px 0 40px;
+    background-color: #44a667;
+    height: 160px;
+    width: 35%;
+    border-radius: 0px 20px 00px 20px;
+    margin: 0 150px 0 150px;
+    text-align: center;
+    color: white;
+    font-family: "Roboto", serif;
+    font-weight: lighter;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.content-text-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px 0 40px;
+    background-color: #009078;
+    height: 160px;
+    width: 35%;
+    border-radius: 0px 20px 00px 20px;
+    text-align: center;
+    color: white;
+    font-family: "Roboto", serif;
+    font-weight: lighter;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Styles pour mobile */
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 18px;
+        width: 80%;
+    }
+    .content{
+        margin-top: 30px;
+        width: 90%;
+    }
+    .content-text{
+        font-size: 14px;
+        margin: 0px 10px 20px 10px;
+    }    
+    .content-title-2 {
+        margin-top: 1px;
+        text-align: center;
+    }
+    .content-block {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .content-text-1:hover,.content-text-2:hover,.content-text-3:hover{ 
+        transform: none; /* Augmente la taille de la div, donnant l'impression qu'elle avance */
+        /*box-shadow: 0 2px 5px white; /* Ombre plus marquée pour renforcer l'effet */
+    }
+    .content-text-1{
+        padding: 0 40px 0 40px;
+        height: 160px;
+        width: 65%;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .content-text-2{
+        padding: 0 40px 0 40px;
+        height: 160px;
+        width: 65%;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .content-text-3{
+        padding: 0 40px 0 40px;
+        height: 160px;
+        width: 65%;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+}
+

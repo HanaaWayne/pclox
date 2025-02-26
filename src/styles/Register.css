@@ -1,0 +1,196 @@
+.container-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-content-register {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 130px 0px 40px 0px;
+}
+
+.block-register {
+    background-color: transparent;
+    width: 100%;
+}
+
+.content-button {
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.student {
+    width: 50%;
+    background-color: #009078;
+    border: none;
+    border-radius: 10px 30px 0px 0px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.school {
+    width: 50%;
+    background-color: #009078;
+    border: none;
+    border-radius: 30px 10px 0px 0px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.student.active {
+    background-color: white; 
+    color: black;
+}
+
+.school.active {
+    background-color: white; 
+    color: black; 
+}
+
+.content-register-student, .content-register-school {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content-title-register {
+    font-family: "Roboto", serif;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+.input, .custom-select, .code-postal, .city {
+    background-color: white;
+    border: 2px solid #E5E5E5;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Champ de numéro de téléphone avec espacement entre les groupes de chiffres */
+.phone-input {
+    background-color: white;
+    border: 2px solid #E5E5E5;
+    outline: none;
+    width: 50%;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+.custom-select {
+    width: 50%; 
+    padding: 7px;
+    font-size: 13px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    padding:8px;
+}
+
+.selected-option {
+    color: #757587;
+    font-size: 13.3333px;
+}
+
+.option{
+    color: #757587;
+}
+
+.option:hover {
+    background-color: #009078; /* Couleur de fond au survol */
+    color: white; /* Changement de couleur du texte pour contraste */
+    cursor: pointer; /* Curseur en mode pointer pour indiquer la sélection */
+    transition: background-color 0.3s ease; /* Animation fluide */
+}
+
+.input-group {
+    display: flex;
+    width: 53%; 
+    gap: 10px; 
+    justify-content: space-between;
+}
+
+.code-postal {
+    width: 40%;
+    padding: 8px;
+    font-family: "Roboto", sans-serif;
+}
+
+.city {
+    width: 70%;
+    padding: 8px;
+    font-family: "Roboto", sans-serif;
+}
+
+.input, .custom-select {
+    width: 50%;
+}
+
+.button-register {
+    background-color: #009078;
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    margin: 20px 0px;
+    width: 25%;
+}
+
+/* STYLES POUR MOBILE */
+@media screen and (max-width: 480px) {
+    .container-content-register {
+        width: 90%;
+    }
+    .input, .custom-select {
+        width: 70%;
+    }
+    .phone-input {
+        background-color: white;
+        border: 2px solid #E5E5E5;
+        outline: none;
+        width: 70%;
+        padding: 8px;
+        border-radius: 5px;
+        margin-top: 10px;
+        font-family: "Roboto", sans-serif;
+    }
+    .input-group {
+        display: flex;
+        width: 77%; 
+        gap: 10px; 
+        justify-content: space-between;
+    }
+    .button-register {
+        width: 40%;
+    }
+    
+}

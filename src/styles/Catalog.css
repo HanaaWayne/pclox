@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Conteneur principal */
+.container-content-catalog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur du catalogue */
+.container-catalog {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 100px;
+    margin-bottom: 45px;
+}
+
+/* Contenu du catalogue */
+.content-catalog {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu-name {
+    font-family: "Roboto", serif;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu-name.active {
+    color: #009078;
+  }
+
+/* Section filtres */
+.content-item {
+    width: 11%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+    margin-left: 20px;
+}
+
+.button-add{
+    background-color: #009078;
+    color: white;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    margin-top: 20px;
+}
+
+.items{
+    display: flex;
+    align-items: center;
+}
+
+.title-item{
+    font-family: "Roboto", serif;
+    font-weight: bold;
+    color: black;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.details-item {
+    font-family: "Roboto", serif;
+    font-size: 15px;
+}
+
+/* Cache l'input natif */
+.input-item {
+    appearance: none;  /* Supprime le style natif */
+    width: 13px;
+    height: 13px;
+    background-color: #e5e5e5;
+    cursor: pointer;
+    position: relative;
+}
+
+.input-item:checked {
+    background-color: #009078;
+}
+
+/* Ajouter un checkmark visuel */
+.input-item:checked::after {
+    content: "✔";
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+/* Section des cartes */
+.content-card {
+    width: 89%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 11px;
+}
+
+/* Carte produit */
+.card {
+    display: flex;
+    height: 210px;
+    border-radius: 10px;
+    background-color: #f0efef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer;
+    margin-top: 13px;
+}
+
+.card.occupied {
+    border: 2px solid red; /* Red border for occupied laptops */
+  }
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+/* Image de la carte */
+.image-card {
+    width: 210px;
+    height: 207px;
+    border-radius: 10px 0 0 10px;
+    background-color: white;
+    border: 2px solid #f0efef;
+}
+
+/* Contenu de la carte */
+.content-card-item {
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+    margin-bottom: 5px;
+}
+
+/* Titre de la carte */
+.title-card {
+    text-align: center;
+    font-family: "Roboto", serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Informations produit */
+.item-card {
+    font-size: 13px;
+    font-family: "Roboto", serif;
+    margin: 5px 0;
+    padding-left: 19px;
+}
+
+
+/* Partie mes infos */
+
+.content-info{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+}
+
+.user{
+    font-family: "Roboto", serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.card-info{
+    display: flex;
+    height: 160px;
+    border-radius: 10px;
+    background-color: #f0efef;
+    margin: 0 0 0 25px;
+}
+
+.content-flex{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.content-card-info {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.title-info {
+    font-family: "Roboto", serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.content-edit{
+    margin-bottom: 30px;
+}
+
+
+
+.edit {
+    background-color: #009078;
+    cursor: pointer;
+    color: white;
+    padding: 5px 9px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 30px;
+    width: 70px;
+    text-align: center;
+}
+
+.edit-drop {
+    background-color: rgb(174, 55, 55);
+    cursor: pointer;
+    color: white;
+    padding: 5px 9px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 30px;
+    width: 150px;
+}
+
+.container-reservation{
+    background-color: white;
+    width: 70%;
+
+    border-radius: 10px;
+    
+
+}
+
+
+.content-reservation{
+
+        width: 100%;
+        display: flex;
+        margin-top: 11px;
+        margin-left: 20px;
+        margin-bottom: 25px;
+        flex-direction: column;
+   
+    
+}
+
+.card-reservation{ 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    width: 915px;
+    border-radius: 10px;
+    background-color: #f0efef;
+    margin-top: 13px;
+    padding-top: 10px;
+}
+
+.content-card-reservation {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 0 30px 0 30px;
+
+}
+
+.content-card-reservation-1 {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+ 
+}
+
+.reservation-button-cancel{
+    background-color: rgb(174, 55, 55);
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    width: 100px;
+    margin-left: 8px;
+}
+
+.reservation-button-validate{
+    background-color:#009078;
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    width: 100px;
+    margin-left: 10px;
+}
+
+
+
+.validate-icons {
+    display: flex;
+    align-items: center; /* Centrer verticalement l'icône et le texte */
+    
+  }
+  
+  .validate-icons svg {
+    margin-right: 5px; /* Espacement entre l'icône et le texte */
+    color: #009078;
+  }
+
+/* STYLES POUR MOBILE */
+@media screen and (max-width: 480px) {
+  .content-catalog {
+    justify-content: center;
+  }
+    .container-reservation{
+         width: 100%;
+    }
+    .content-flex{
+        width: 90%;
+        flex-direction: column;
+        margin-top: 11px;
+        margin-left: 0;
+        margin-bottom: 25px;
+}
+.card-info{
+    display: flex;
+    height: 160px;
+    border-radius: 10px;
+    background-color: #f0efef;
+    margin: 10px 0 0 35px;
+}
+.edit {
+ 
+    margin-left: 35px;
+  
+}
+.content-card-reservation {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 0px;
+}
+.card-reservation{ 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    width: 90%;
+    border-radius: 10px;
+    background-color: #f0efef;
+    margin-top: 13px;
+    padding-top: 10px;
+}
+.card {
+    display: flex;
+    height: 180px;
+    border-radius: 10px;
+    background-color: #f0efef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer;
+    margin-top: 13px;
+}
+.image-card {
+    width: 150px;
+    height: 176px;
+    border-radius: 10px 0 0 10px;
+    background-color: white;
+    border: 2px solid #f0efef;
+}
+.content-card-item {
+    display: flex;
+    flex-direction: column;
+    width: 155px;
+    margin-bottom: 5px;
+}
+.content-card {
+    width: 89%;
+    gap: 14px;
+    margin-left: 20px;
+}
+.content-item {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+    margin-left: 20px;
+}
+.button-add{
+    
+  
+    width: 70px;
+   
+}
+.title-item{
+    font-family: "Roboto", serif;
+    font-weight: bold;
+    color: black;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.details-item {
+    font-family: "Roboto", serif;
+    font-size: 11px;
+}
+
+}

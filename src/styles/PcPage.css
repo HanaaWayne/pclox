@@ -1,0 +1,184 @@
+.container-pc {
+    width: 90%;
+    display: flex;
+   justify-content: center;
+    margin-top: 120px;
+    margin-bottom: 45px;
+}
+
+.container-pc-edit {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+
+
+.content-pc {
+    background-color: white;
+    width: 70%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    border-radius: 10px;
+    height: auto;
+}
+
+
+
+.image-card-pc {
+    width: 210px;
+    height: 200px;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+    background-color: #f0efef;
+    border: 2px;
+}
+
+.card-pc {
+    display: flex;
+ height: auto;
+    border-radius: 10px;
+    background-color: #f0efef;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content-card-pc {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+
+.pc-button-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pc-button{
+    background-color: #009078;
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    width: 100px;
+}
+
+.pc-button-cancel{
+    background-color: rgb(174, 55, 55);
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    width: 100px;
+}
+
+.pc-button-back{
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    width: 100px;
+}
+
+.label-checkbox-pc {
+    display: flex;
+    align-items: center;  /* Centrer verticalement */
+    gap: 8px;  /* Ajouter un petit espace entre le label et la case */
+  }
+  
+  .checkbox-pc {
+    margin: 0;  /* Supprime les marges par défaut autour de la case */
+}
+
+.checkbox-pc:checked {
+    background-color: #009078;
+}
+
+.container-laptops {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+    margin-bottom: 45px;
+}
+
+.content-laptops {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.card-reservation{
+    height: auto;
+}
+
+.content-pc-list {
+    background-color: white;
+    width: 90%;
+    display: flex;
+    border-radius: 10px;
+    height: auto;
+    margin-top: 120px;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+.input-reservation-date{
+    width: 100px;
+    border: 2px solid #E5E5E5;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+}
+
+
+@media screen and (max-width: 480px) {
+    .content-pc {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .pc-button-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .content-card-pc {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin-bottom: 5px;
+        margin-left: 2px;
+    }
+    .input-reservation-date{
+        width: 70px;
+    }
+    .pc-button-back{
+        background-color: black;
+        cursor: pointer;
+        color: white;
+        padding: 12px 17px;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Roboto', sans-serif;
+        width: 100px;
+    }
+}

@@ -1,0 +1,209 @@
+/* Appliquer sur toute la page */
+html, body {
+    height: 100%;  /* Assure que le body prend toute la hauteur */
+    margin: 0;     /* Supprimer les marges par défaut */
+  }
+  
+.app-container {
+    display: flex;
+    flex-direction: column;  /* Dispose les éléments verticalement */
+    min-height: 100vh;       /* Assure que la hauteur minimale est de 100% de la fenêtre */
+}
+
+.main-content {
+    flex: 1;  /* Le contenu principal prend tout l'espace restant */
+}
+
+.footer-container {
+    width: 100%;
+    background-color: black;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content {
+    width: 90%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    gap: 210px;
+    margin-top: 100px;
+}
+
+.footer-content-2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+/* Ajout du texte copyright centré sous les éléments */
+.footer-copyright {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 14px; /* Ajuste la taille du texte */
+    padding: 8px 0;
+}
+
+
+.content-1, .content-2bis, .content-3, .content-4 {
+    background-color: black;
+}
+
+.content-1 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.content-2bis {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-4 {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.logo-container-footer{
+    background-color: transparent;
+    border: none;
+}
+
+.footer-logo {
+    font-family: 'Aldrich', sans-serif;
+    cursor: pointer;
+}
+
+.text-contact {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.contact {
+    background-color: #009078;
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-network-icons {
+    display: flex;
+    cursor: pointer;
+}
+
+.social-network {
+    color: white;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.conditions {
+    color: white;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 35px;
+}
+
+.flex-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Styles pour mobile */
+@media screen and (max-width: 480px) {
+    .footer-container {
+        height: auto; /* Permet au footer de s'adapter au contenu */
+        padding: 10px 0; /* Réduction du padding pour éviter trop d'espace */
+    }
+
+    /* ⚡️ Ajustement général pour réduire l'espace */
+    .footer-content {
+        align-items: center;
+        width: 100%;
+        padding: 10px 0; /* Moins de padding */
+        gap: 0;
+        margin-top: 0;
+    }
+
+    /* ⚡️ On empile et réduit les blocs */
+    .flex-footer {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 5px; /* Réduction de l'espace entre les sections */
+    }
+
+    /* ⚡️ Réduction de la taille du logo */
+    .footer-logo {
+        font-size: 23px; /* Plus petit pour ne pas déborder */
+        text-align: center;
+    
+    }
+
+    .logo-container-footer {
+       
+        display: flex;
+        justify-content: center;
+
+    }
+    /* ⚡️ Ajustement du bloc Contact */
+    .text-contact {
+        font-size: 13px;
+        text-align: center;
+        margin-bottom: 5px; /* Réduction de l'espacement */
+        margin-top: 0;
+    }
+
+    .contact {
+        padding: 5px 10px; /* Taille réduite */
+        font-size: 11px;
+    }
+
+    /* ⚡️ Réseaux sociaux centrés et rapprochés */
+    .social-network-icons {
+        justify-content: center;
+        gap: 10px; /* Réduction de l’espace entre icônes */
+    }
+
+    .social-network {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    /* ⚡️ Conditions générales en bas et bien serrées */
+    .content-4 {
+        text-align: center;
+        margin-top: 5px; /* Moins d’espace entre les éléments */
+    }
+
+    .conditions {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+}

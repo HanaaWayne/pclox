@@ -1,0 +1,92 @@
+.content-info-edit{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.card-info-edit{
+    height: auto;
+    border-radius: 10px;
+    background-color: #f0efef;
+    margin: 20px 0 20px 0;
+}
+
+.content-card-info-edit {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.label{
+    margin-left: 40px;
+    font-family: "Roboto", serif;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.input-edit{
+    width: 300px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    border: 2px solid #E5E5E5;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+}
+
+.content-edit-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.edit-button{
+    background-color: #009078;
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    width: 100px;
+}
+
+.edit-button-cancel{
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    width: 100px;
+}
+
+@media screen and (max-width: 480px) {
+    .input-edit{
+        width: 230px;
+        margin-left: 20px;
+    }
+    .label{
+        margin-left: 20px;
+    }
+    .content-edit-button{
+        margin-right: 110px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-info-edit{
+        height: auto;
+        width: 90%;
+        border-radius: 10px;
+        background-color: #f0efef;
+        margin: 20px 0 20px 0;
+    }
+}
