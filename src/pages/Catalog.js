@@ -12,7 +12,7 @@ const CatalogContent = () => {
   const [isAdd, setIsAdd] = useState(false);
   const navigate = useNavigate();
 
-  const { user } = useUser();
+  const { user, API_BASE_URL } = useUser();
   const schoolId = user.role === "SCHOOL" ? user.id : user?.school?.id;
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const CatalogContent = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8082/api/school/${schoolId}/laptops`, {
+      const response = await fetch(`${API_BASE_URL}/api/school/${schoolId}/laptops`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`, // Ajoute le token dans les en-têtes
@@ -126,7 +126,7 @@ const CatalogContent = () => {
             <div className="content-card">
               {laptops.length === 0 ? (
                 <p style={{ textAlign: "center", fontSize: "14px", marginTop: "20px", width: "100%" }}>
-                  Vous n'avez aucun ordinateur enregistré.
+                  Il n'y a aucun ordinateur enregistré.
                 </p>
               ) : (
                 laptops.map((laptop) => (
@@ -135,7 +135,7 @@ const CatalogContent = () => {
                     key={laptop.id}
                     onClick={() => navigate(`/pc/${laptop.id}`)}
                   >
-                    <div className="image-card">Image</div>
+                    <div className="image-card"></div>
                     <div className="content-card-item">
                       <p className="title-card">{laptop.brand.charAt(0).toUpperCase() + laptop.brand.slice(1)}</p>
                       <p className="item-card">Écran: {laptop.screen}"</p>

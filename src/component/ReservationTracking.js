@@ -4,16 +4,18 @@ import { useUser } from "../contexts/UserContext"; // Importation du contexte ut
 import { useNavigate } from "react-router-dom";
 import { GrValidate } from "react-icons/gr";
 
-// URL de l'API (assurez-vous que l'URL de votre backend est correcte)
-const API_URL = "http://localhost:8082/api/reservations/user"; // Assurez-vous que cette URL est correcte
-const CANCEL_URL = "http://localhost:8082/api/reservations/cancel"; // URL pour annuler la réservation
 
 const ReservationTracking = () => {
   // État pour stocker la réservation
   const [reservation, setReservation] = useState(null);
   const navigate = useNavigate();
-  const { user } = useUser(); // Récupération de l'utilisateur connecté
+  const { user, API_BASE_URL } = useUser(); // Récupération de l'utilisateur connecté
   const userId = user.role === "STUDENT" && user?.id; // Récupérer l'ID de l'utilisateur
+
+  // URL de l'API (assurez-vous que l'URL de votre backend est correcte)
+const API_URL =  `${API_BASE_URL}/api/reservations/user`; // Assurez-vous que cette URL est correcte
+const CANCEL_URL = `${API_BASE_URL}/api/reservations/cancel`; // URL pour annuler la réservation
+
 
   // Récupérer la réservation de l'utilisateur au montage du composant
   useEffect(() => {

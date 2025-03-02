@@ -4,11 +4,13 @@ import "../styles/Login.css";
 import { useUser } from "../contexts/UserContext";
 
 const Login = () => {
-  const { login } = useUser();
+  const { login, API_BASE_URL } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  console.log("URL API Backend :", API_BASE_URL);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8082/api/user/login", {
+      const response = await fetch(`${API_BASE_URL}/api/user/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -36,6 +38,7 @@ const Login = () => {
 
         if (token) {
           login(token); // On passe seulement le token
+          console.log("Token stocké dans localStorage :", localStorage.getItem("token")); // 🔍 Vérification
           navigate("/menu"); // Redirection après connexion
         } else {
           setError("Aucun token reçu. Veuillez réessayer.");

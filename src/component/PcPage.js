@@ -18,7 +18,7 @@ const PcPage = () => {
   const [deleteError, setDeleteError] = useState("");
    const [success, setSuccess] = useState("");
   const navigate = useNavigate();
-  const { user } = useUser();
+  const { user, API_BASE_URL } = useUser();
   const laptopId = laptop?.id;
   const userId = user.role === "STUDENT" && user?.id;
   const schoolId = user?.school?.id;
@@ -30,7 +30,7 @@ const PcPage = () => {
     const fetchLaptop = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch(`http://localhost:8082/api/laptops/${id}`, {
+        const response = await fetch(`${API_BASE_URL}/api/laptops/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -55,7 +55,7 @@ const PcPage = () => {
       if (!userId) return;
       try {
         const response = await fetch(
-          `http://localhost:8082/api/reservations/user/${userId}`,
+          `${API_BASE_URL}/api/reservations/user/${userId}`,
           {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           }
@@ -87,7 +87,7 @@ const PcPage = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8082/api/reservations/create", {
+      const response = await fetch(`${API_BASE_URL}/api/reservations/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -114,7 +114,7 @@ const PcPage = () => {
     setDeleteError("");
 
     try {
-      const response = await fetch(`http://localhost:8082/api/laptops/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/laptops/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
@@ -145,7 +145,7 @@ const PcPage = () => {
           <>
             <div className="content-pc">
               <div>
-                <div className="image-card-pc">Image</div>
+                <div className="image-card-pc"></div>
               </div>
               <div className="card-pc">
                 <div className="content-card-pc">

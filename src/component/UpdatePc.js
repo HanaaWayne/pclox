@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Catalog.css";
 import "../styles/UpdateInfo.css";
+import { useUser } from "../contexts/UserContext";
 
 const UpdateLaptopInfo = ({ onCancel, laptop }) => {
   const [brand, setBrand] = useState(laptop.brand);
@@ -15,6 +16,7 @@ const UpdateLaptopInfo = ({ onCancel, laptop }) => {
   const [occupied, setOccupied] = useState(laptop.occupied);
   const [error, setError] = useState("");
   const [fieldErrors, setFieldErrors] = useState({});
+  const { user, updateUser, API_BASE_URL } = useUser();
 
   // Validation des champs requis
   const validateFields = () => {
@@ -64,7 +66,7 @@ const UpdateLaptopInfo = ({ onCancel, laptop }) => {
     };
 
     try {
-      const response = await fetch(`http://localhost:8082/api/laptops/${laptop.id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/laptops/${laptop.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

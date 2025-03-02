@@ -4,7 +4,7 @@ import "../styles/AddLaptop.css";
 import "../styles/PcPage.css";
 
 const AddLaptop = ({ onCancel, handleLaptopAdded }) => {
-  const { user } = useUser();
+  const { user, API_BASE_URL  } = useUser();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [fieldErrors, setFieldErrors] = useState({});
@@ -65,7 +65,7 @@ const AddLaptop = ({ onCancel, handleLaptopAdded }) => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:8082/api/laptops/create/${schoolId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/laptops/create/${schoolId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

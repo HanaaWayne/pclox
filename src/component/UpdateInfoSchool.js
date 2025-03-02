@@ -4,7 +4,7 @@ import "../styles/Catalog.css";
 import "../styles/UpdateInfo.css";
 
 const UpdateInfoSchool = ({ onCancel, email, phoneNumber, schoolName, addressComplement, street, codePostal, city }) => {
-  const { user, updateUser } = useUser();
+  const { user, updateUser, API_BASE_URL } = useUser();
   const [newEmail, setNewEmail] = useState(email);
   const [newPhoneNumber, setNewPhoneNumber] = useState(phoneNumber);
   const [newSchoolName, setNewSchoolName] = useState(schoolName);
@@ -72,7 +72,7 @@ const UpdateInfoSchool = ({ onCancel, email, phoneNumber, schoolName, addressCom
     };
 
     try {
-      const response = await fetch(`http://localhost:8082/api/school/${schoolId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/school/${schoolId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

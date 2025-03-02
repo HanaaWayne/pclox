@@ -12,6 +12,9 @@ export const UserProvider = ({ children }) => {
   // Flag pour éviter le rendu avant que les données soient chargées
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 
+      // URL de l'API (gérée dynamiquement)
+      const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8082";
+
   // Fonction pour récupérer les infos de l'utilisateur avec le token
   const fetchUserData = async () => {
     const token = localStorage.getItem("token");
@@ -22,7 +25,7 @@ export const UserProvider = ({ children }) => {
     }
 
     try {
-      const response = await fetch("http://localhost:8082/api/user/me", {
+      const response = await fetch(`${API_BASE_URL}/api/user/me`, {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -80,7 +83,7 @@ export const UserProvider = ({ children }) => {
   }
 
   return (
-    <UserContext.Provider value={{ user, login, logout, loading, error, updateUser }}>
+    <UserContext.Provider value={{ user, login, logout, loading, error, updateUser, API_BASE_URL }}>
       {children}
     </UserContext.Provider>
   );

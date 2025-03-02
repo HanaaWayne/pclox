@@ -4,18 +4,19 @@ import { useUser } from "../contexts/UserContext"; // Importation du contexte ut
 import { useNavigate } from "react-router-dom";
 import { GrValidate } from "react-icons/gr";
 
-// URL de l'API (assurez-vous que l'URL de votre backend est correcte)
-const CANCEL_URL = "http://localhost:8082/api/reservations/cancel"; // URL pour annuler la réservation
-const API_URL_SCHOOL = "http://localhost:8082/api/reservations/school"; // Récupérer les réservations de l'établissement
-const VALIDATE_URL = "http://localhost:8082/api/reservations/validate"; // URL pour valider la réservation
-
 const ReservationTrackingSchool = () => {
   const [reservations, setReservations] = useState([]);
   const navigate = useNavigate();
-  const { user } = useUser(); // Récupération de l'utilisateur connecté
+  const { user, API_BASE_URL } = useUser(); // Récupération de l'utilisateur connecté
   const schoolId = user.role === "SCHOOL" ? user?.id : null; // Vérifier si l'utilisateur est une école
 
   const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+  
+// URL de l'API (assurez-vous que l'URL de votre backend est correcte)
+const CANCEL_URL = `${API_BASE_URL}/api/reservations/cancel`; // URL pour annuler la réservation
+const API_URL_SCHOOL =  `${API_BASE_URL}/api/reservations/school`; // Récupérer les réservations de l'établissement
+const VALIDATE_URL =  `${API_BASE_URL}/api/reservations/validate`; // URL pour valider la réservation
 
   useEffect(() => {
     const fetchReservations = async () => {

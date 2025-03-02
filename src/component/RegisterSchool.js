@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "../styles/Register.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../contexts/UserContext";
 
 const RegisterSchool = () => {
+  const { login, API_BASE_URL } = useUser();
   const [schoolName, setSchoolName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [street, setStreet] = useState("");
@@ -87,7 +89,7 @@ const RegisterSchool = () => {
     };
 
     try {
-      await axios.post("http://localhost:8082/api/school/signup", userData, {
+      await axios.post(`${API_BASE_URL}/api/school/signup`, userData, {
         withCredentials: true,
       });
 
