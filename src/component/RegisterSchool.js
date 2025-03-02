@@ -95,6 +95,7 @@ const RegisterSchool = () => {
     try {
       console.log("Envoi des données à :", `${API_BASE_URL}/api/school/signup`);
       const response = await axios.post(`${API_BASE_URL}/api/school/signup`, userData, {
+        method: "OPTIONS", // Ajout pour éviter les erreurs CORS
         headers: {
           "Content-Type": "application/json", // Ajout pour éviter les erreurs CORS
         },
