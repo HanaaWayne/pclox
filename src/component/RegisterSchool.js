@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Register.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +20,11 @@ const RegisterSchool = () => {
 
   const navigate = useNavigate();
 
+  // Vérifier si API_BASE_URL est bien défini
+  useEffect(() => {
+    console.log("API_BASE_URL utilisé :", API_BASE_URL);
+  }, []);
+
   // Formatage du numéro de téléphone
   const handlePhoneChange = (e) => {
     let value = e.target.value.replace(/\D/g, "").slice(0, 10);
@@ -33,12 +38,11 @@ const RegisterSchool = () => {
   };
 
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,20}$/;
-  const emailRegex = /^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]{1,184}\.[a-zA-Z]{2,}$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   // Validation des champs
   const validateFields = () => {
     let errors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!schoolName.trim()) errors.schoolName = "Le nom de l'établissement est requis.";
     if (!phoneNumber.trim()) {
@@ -89,9 +93,15 @@ const RegisterSchool = () => {
     };
 
     try {
-      await axios.post(`${API_BASE_URL}/api/school/signup`, userData, {
-        withCredentials: true,
+      console.log("Envoi des données à :", `${API_BASE_URL}/api/school/signup`);
+      const response = await axios.post(`${API_BASE_URL}/api/school/signup`, userData, {
+        headers: {
+          "Content-Type": "application/json", // Ajout pour éviter les erreurs CORS
+        },
+        // withCredentials: true, // Désactivé temporairement pour tester CORS
       });
+
+      console.log("Réponse serveur :", response);
 
       setSuccess("Inscription réussie !");
       setError("");
@@ -100,7 +110,10 @@ const RegisterSchool = () => {
         navigate("/login");
       }, 2000);
     } catch (err) {
-      if (err.response && typeof err.response.data === "string") {
+      console.error("Erreur API :", err); // Ajout d'un log détaillé
+
+      if (err.response) {
+        console.log("Réponse complète de l'erreur :", err.response);
         const message = err.response.data.toLowerCase();
 
         if (message.includes("numéro de téléphone") || message.includes("phone")) {
@@ -122,77 +135,29 @@ const RegisterSchool = () => {
     <div className="content-register-school">
       <p className="content-title-register">Créer un compte pour un établissement</p>
       <form className="form-register" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Nom de l'établissement"
-          className="input"
-          value={schoolName}
-          onChange={(e) => setSchoolName(e.target.value)}
-        />
+        <input type="text" placeholder="Nom de l'établissement" className="input" value={schoolName} onChange={(e) => setSchoolName(e.target.value)} />
         {fieldErrors.schoolName && <p className="error-message">{fieldErrors.schoolName}</p>}
 
-        <input
-          type="text"
-          placeholder="Numéro de téléphone"
-          className="phone-input"
-          value={phoneNumber}
-          onChange={handlePhoneChange}
-        />
+        <input type="text" placeholder="Numéro de téléphone" className="phone-input" value={phoneNumber} onChange={handlePhoneChange} />
         {fieldErrors.phoneNumber && <p className="error-message">{fieldErrors.phoneNumber}</p>}
 
-        <input
-          type="text"
-          placeholder="Numéro & rue"
-          className="input"
-          value={street}
-          onChange={(e) => setStreet(e.target.value)}
-        />
+        <input type="text" placeholder="Numéro & rue" className="input" value={street} onChange={(e) => setStreet(e.target.value)} />
         {fieldErrors.street && <p className="error-message">{fieldErrors.street}</p>}
 
-        <input
-          type="text"
-          placeholder="Complément adresse"
-          className="input"
-          value={adresseComplement}
-          onChange={(e) => setAdresseComplement(e.target.value)}
-        />
+        <input type="text" placeholder="Complément adresse" className="input" value={adresseComplement} onChange={(e) => setAdresseComplement(e.target.value)} />
 
         <div className="input-group">
-          <input
-            type="text"
-            placeholder="Code postal"
-            className="code-postal"
-            value={postalCode}
-            onChange={handlePostalCodeChange}
-          />
+          <input type="text" placeholder="Code postal" className="code-postal" value={postalCode} onChange={handlePostalCodeChange} />
           {fieldErrors.postalCode && <p className="error-message">{fieldErrors.postalCode}</p>}
 
-          <input
-            type="text"
-            placeholder="Ville"
-            className="city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
+          <input type="text" placeholder="Ville" className="city" value={city} onChange={(e) => setCity(e.target.value)} />
           {fieldErrors.city && <p className="error-message">{fieldErrors.city}</p>}
         </div>
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="input"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <input type="email" placeholder="Email" className="input" value={email} onChange={(e) => setEmail(e.target.value)} />
         {fieldErrors.email && <p className="error-message">{fieldErrors.email}</p>}
 
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          className="input"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <input type="password" placeholder="Mot de passe" className="input" value={password} onChange={(e) => setPassword(e.target.value)} />
         {fieldErrors.password && <p className="error-message">{fieldErrors.password}</p>}
 
         <button type="submit" className="button-register">S'inscrire</button>
